@@ -50,5 +50,9 @@ return require('packer').startup(function(use)
   use('tpope/vim-commentary')
   use('tpope/vim-surround')
   use('Raimondi/delimitMate')
+  use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
 end)
 
