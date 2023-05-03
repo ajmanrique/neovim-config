@@ -22,8 +22,9 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+vim.keymap.set("n", "n", "nzzzv") -- Next search in center
+vim.keymap.set("n", "N", "Nzzzv") -- Prev search in center
+vim.keymap.set("n", "<leader><space>", cmd.noh) -- Clean search
 
 vim.keymap.set("n", "<leader>c", cmd.bdelete)
 
@@ -31,3 +32,13 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 
 vim.keymap.set("n", "<F3>", cmd.NvimTreeToggle)
 vim.keymap.set("n", "<F2>", cmd.NvimTreeFindFileToggle)
+
+-- Switching windows
+vim.keymap.set("n", "<C-j>", "<C-w>j")
+vim.keymap.set("n", "<C-k>", "<C-w>k")
+vim.keymap.set("n", "<C-l>", "<C-w>l")
+vim.keymap.set("n", "<C-h>", "<C-w>h")
+
+-- Split windows
+vim.keymap.set("n", "<leader>h", cmd.split)
+vim.keymap.set("n", "<leader>v", cmd.vsplit)

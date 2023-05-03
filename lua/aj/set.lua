@@ -18,7 +18,7 @@ opt.backup = false
 opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.undofile = true
 
-opt.hlsearch = false
+opt.hlsearch = true
 opt.incsearch = true
 
 opt.termguicolors = true
@@ -28,3 +28,10 @@ opt.signcolumn = "yes"
 opt.isfname:append("@-@")
 
 opt.updatetime = 50
+
+-- Check if the "unnamedplus" feature is available in the current version of Vim.
+if vim.fn.has("unnamedplus") == 1 then
+    opt.clipboard = "unnamedplus"
+else
+    opt.clipboard = "unnamed"
+end
