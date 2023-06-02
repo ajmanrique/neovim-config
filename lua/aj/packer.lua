@@ -54,5 +54,24 @@ return require('packer').startup(function(use)
       'nvim-lualine/lualine.nvim',
       requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
+ use {
+      "rest-nvim/rest.nvim",
+      requires = { "nvim-lua/plenary.nvim" }
+  }
+  use {
+      'rmagatti/auto-session',
+      config = function()
+          require("auto-session").setup {
+              log_level = "error",
+              auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/"},
+          }
+      end
+  }
+  use {
+      'akinsho/bufferline.nvim',
+      tag = "*",
+      requires = 'nvim-tree/nvim-web-devicons'
+  }
+  use "lukas-reineke/indent-blankline.nvim"
 end)
 

@@ -42,3 +42,8 @@ vim.keymap.set("n", "<C-h>", "<C-w>h")
 -- Split windows
 vim.keymap.set("n", "<leader>h", cmd.split)
 vim.keymap.set("n", "<leader>v", cmd.vsplit)
+
+-- Rest Client
+vim.keymap.set("n", "<leader>rr", function()
+    require("rest-nvim").run()
+end)

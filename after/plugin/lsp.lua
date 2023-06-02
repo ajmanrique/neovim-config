@@ -6,7 +6,7 @@ end)
 
 lsp.ensure_installed({
 	'pyright',
-	'eslint',
+	'tsserver',
 })
 
 local cmp = require('cmp')
@@ -35,4 +35,10 @@ lsp.on_attach(function(client, bufnr)
 	vim.keymap.set('n', ']d', function() vim.diagnostic.goto_prev() end, opts)
 	vim.keymap.set('i', '<C-h>', function() vim.lsp.buf.signature_help() end, opts)
 end)
+
+local util = require 'lspconfig.util'
+require('lspconfig').tsserver.setup{
+   root_dir = util.root_pattern('.git')(fname)
+}
+
 lsp.setup()

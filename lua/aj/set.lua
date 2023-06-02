@@ -1,5 +1,6 @@
 local opt = vim.opt
 opt.guicursor = ""
+opt.guifont = "Hack Nerd Font:h10"
 
 opt.nu = true
 opt.relativenumber = true
